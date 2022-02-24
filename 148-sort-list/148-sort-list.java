@@ -10,6 +10,8 @@
  */
 class Solution {
     public ListNode sortList(ListNode head) {
+        
+        // No need to sort
         if(head==null || head.next==null)
             return head;
         return mergeSort(head);
