@@ -16,24 +16,18 @@ class Solution {
             int start2 = secondList[j][0];
             int end2 = secondList[j][1];
             
+            // Find the intersecting interval
             int startMax = Math.max(start1, start2);
             int endMin = Math.min(end1, end2);
             
+            // Check if the interval is valid
             if(endMin>=startMax)
                 ans.add(new int[]{startMax, endMin});
             
             if(end1>end2)
                 j++;
-            // else if(end2>end1)
-            //     i++;
-            // else{
-            //     i++;
-            //     j++;
-            // }
             else
                 i++;
-                
-            
         }
         return ans.toArray(new int[ans.size()][]);
     }
