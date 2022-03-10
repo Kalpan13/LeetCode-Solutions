@@ -27,6 +27,6 @@ class Solution {
         while(st<nums.length && nums[st]==curVal+1)
             st++;
         
-        return memo[i] = Math.max(curSum+recurse(nums, st, memo), recurse(nums, i+1, memo));
+        return memo[i] = Math.max(curSum+recurse(nums, st, memo), recurse(nums, prevSt, memo));
     }
 }
