@@ -1,9 +1,5 @@
 class Solution {
     public int regionsBySlashes(String[] grid) {
-        int n = grid.length;
-        int m = grid[0].length();
-        int ng[][] = new int[n*3][m*3];
-          
         /*
         Convert / \ to number of island problem
         '/' --> 0 0 1
@@ -15,6 +11,11 @@ class Solution {
                 0 0 1
                 
         */
+        
+        int n = grid.length;
+        int m = grid[0].length();
+        int ng[][] = new int[n*3][m*3];
+          
         for(int i=0;i<grid.length;i++)
         {
             for(int j=0;j<m;j++)
