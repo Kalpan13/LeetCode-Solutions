@@ -35,17 +35,12 @@ class Solution {
         }
         int regions = 0;
         
-        // for(int i=0;i)
         for(int i=0;i<ng.length;i++)
         {
             for(int j=0;j<ng[0].length;j++)
             {
-                 // System.out.print(ng[i][j] + " ");
                 regions += countRegions(ng,i,j)>0?1:0;
             }
-                
-            // System.out.println();
-
         }
                             
         
