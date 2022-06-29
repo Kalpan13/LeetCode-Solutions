@@ -33,7 +33,7 @@ class Solution {
         
         while(!q.isEmpty())
         {
-            int qSize = q.size();
+            int qSize = q.size(); // Iterate over current possible courses
             semestersTaken++;
             for(int i=0;i<qSize;i++)
             {
@@ -42,7 +42,7 @@ class Solution {
                 
                 for(Integer course: prereqMap.getOrDefault(currCourse, new HashSet<>()))
                 {
-                    inDegree[course]--;
+                    inDegree[course]--;   // Update Indegree of courses having currCourse as prereq
                     if(inDegree[course]==0)
                         q.offer(course);
                 }
