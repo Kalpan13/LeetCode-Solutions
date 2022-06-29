@@ -46,6 +46,7 @@ class Solution {
                     if(inDegree[course]==0)
                         q.offer(course);
                 }
+                prereqMap.remove(currCourse);
             }
         }
         return coursesRemaining==0?semestersTaken:-1;
