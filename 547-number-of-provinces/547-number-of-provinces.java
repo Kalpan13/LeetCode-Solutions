@@ -10,8 +10,7 @@ class Solution {
                 if(isConnected[i][j]==1 && i!=j)
                 {
                     uf.union(i,j);
-                }
-                    
+                }              
             }
         }
         int provinces = 0;
