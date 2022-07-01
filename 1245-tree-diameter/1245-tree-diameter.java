@@ -18,10 +18,9 @@ class Solution {
         visited = new boolean[n];
         
         buildGraph(edges);
-        findFarthest(0, 0);
+        findFarthest(0, 0);  // Farthest from any node
         Arrays.fill(visited,false);
-        
-        findFarthest(farthestFromStart,0);
+        findFarthest(farthestFromStart,0); // Farthest from farthest node
         return maxDistanceFromStart;
     }
     public void buildGraph(int[][] edges)
