@@ -36,7 +36,6 @@ class Solution {
             if(visited[neigh])
                 continue;
             next.add(neigh);
-            // System.out.println("Counting edge from : "+node +" to : "+ neigh);
             edgeCount++;
         }
         
