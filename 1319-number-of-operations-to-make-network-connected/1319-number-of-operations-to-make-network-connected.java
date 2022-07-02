@@ -12,13 +12,11 @@ class Solution {
         int islands = 0;
         for(int i=0;i<n;i++)
         {
-            // System.out.println("i : "+i + " parent :"+uf.parent[i]);
             if(uf.rank[i]==n)
                 return 0;
             if(uf.parent[i]==i)
                 islands++;
         }
-        // System.out.println("Islands : "+islands+ " additionalEdges : "+ additionalEdges);
         return additionalEdges>=(islands-1)?(islands-1):-1;
         
     }
