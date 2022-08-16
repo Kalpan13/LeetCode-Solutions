@@ -14,7 +14,6 @@ class Solution {
             
             prereqs.get(prereq).add(course);
         }
-        //System.out.println(prereqs);
         Queue<Integer> q = new LinkedList<>();
         int coursePending = n;
         for(int i=0;i<n;i++)
@@ -25,18 +24,14 @@ class Solution {
         while(!q.isEmpty())
         {
             int course = q.poll();
-            //System.out.println("Taking course :"+course);
             coursePending--;
             Set<Integer> nextCourses = prereqs.getOrDefault(course, new HashSet<>());
-            //System.out.println("Resolving course :"+nextCourses);
             for(int next:nextCourses)
             {      
                 inDegree[next]--;
-               // System.out.println("Indegree : "+next + " is "+inDegree[next]);
                 if(inDegree[next]==0)
                 {
                     inDegree[next]--;
-                    //prereqs.get(course).remove(next);
                     q.offer(next);
                 }
             }
