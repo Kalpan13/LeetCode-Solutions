@@ -14,6 +14,51 @@
  * }
  */
 class Solution {
+    TreeNode first = null;
+    TreeNode second = null;
+    TreeNode middle = null;
+    TreeNode prev = null;
+    public void recoverTree(TreeNode root) {
+        
+         prev = new TreeNode(Integer.MIN_VALUE);
+         inorder(root);
+         if(second!=null)
+         {
+             int tp = first.val;
+             first.val = second.val;
+             second.val = tp;
+         }
+        else
+        {
+            int tp = first.val;
+            first.val = middle.val;
+            middle.val = tp;
+        }
+    }
+    
+    public void inorder(TreeNode root)
+    {
+        if(root == null)
+            return;
+        inorder(root.left);
+        
+        if(prev.val>root.val)
+        {
+            if(first==null)
+            {
+                first = prev;
+                middle = root;
+            }
+            else
+            {
+                second = root;
+            }
+        }
+        prev = root;
+        inorder(root.right);
+    }
+    /*
+    O(N) Solution
     
     public void recoverTree(TreeNode root) {
         List<Integer> inorder = new ArrayList<>();
@@ -70,4 +115,6 @@ class Solution {
         recoverSwapped(root.right, recoveredCount, x, y);
         
     }
+    */
+    
 }
