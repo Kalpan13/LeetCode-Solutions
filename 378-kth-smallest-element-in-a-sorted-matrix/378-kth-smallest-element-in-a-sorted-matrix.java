@@ -13,7 +13,6 @@ class Solution {
             int r = triplet[0];
             int c = triplet[1];
             val = triplet[2];
-            //System.out.println(" k : "+k + " val : "+val);
             if(c<n-1)
                 pq.offer(new int[]{r,c+1,matrix[r][c+1]});
         }
