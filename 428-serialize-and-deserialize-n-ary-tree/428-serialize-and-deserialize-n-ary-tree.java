@@ -23,12 +23,7 @@ class Codec {
     
     public String serialize(Node root) {
         serialized = new StringBuffer();
-        //serialized.append("[");
         serializeHelper(root);
-        //serialized.append("]");
-        
-        //System.out.println(serialized);
-        
         return serialized.toString();
     }
     private void serializeHelper(Node root)
