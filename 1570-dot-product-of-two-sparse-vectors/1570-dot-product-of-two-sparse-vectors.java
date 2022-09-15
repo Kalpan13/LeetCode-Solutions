@@ -1,14 +1,11 @@
 class SparseVector {
     Map<Integer,Integer> indMap;
-    Set<Integer> inds;
     int size;
     SparseVector(int[] nums) {
         indMap = new HashMap<>();
-        inds = new HashSet<>();
         for(int i=0;i<nums.length;i++)
         {
             indMap.put(i,nums[i]);
-            inds.add(i);
         }
         size = nums.length;
     }
@@ -19,8 +16,7 @@ class SparseVector {
         
         for(int i=0;i<size;i++)
         {
-            if(this.inds.contains(i) && vec.inds.contains(i))
-                val += (this.indMap.get(i) * vec.indMap.get(i));
+            val += (this.indMap.getOrDefault(i,0) * vec.indMap.getOrDefault(i,0));
         }
         return val;
     }
