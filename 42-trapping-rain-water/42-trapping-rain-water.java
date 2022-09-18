@@ -13,10 +13,6 @@ class Solution {
         {
             maxR[i] = Math.max(maxR[i+1],height[i+1]);
         }
-        // for(int i=0;i<n;i++)
-        // {
-        //     System.out.println("i : "+i+" maxL :"+maxL[i] + " maxR : "+maxR[i]);
-        // }
         
         int trappedWater = 0;
         
