@@ -6,7 +6,6 @@ class Solution {
         while(i<s.length())
         {
             char c = s.charAt(i);
-            //System.out.println("Current char : "+c);
             if(Character.isDigit(c))
             {
                 int num = c-'0';
@@ -20,7 +19,6 @@ class Solution {
                 }
                 i = j;
                 countSt.push(num);
-                //System.out.println("Added num : "+num + " to countSt : "+ countSt);
                 continue;
             }
             else if(c=='[')
@@ -36,7 +34,6 @@ class Solution {
                 st.pop();
                 
                 int num = countSt.pop();
-                //System.out.println("Frequency of word :"+sb+ " is "+num);
                 StringBuffer ans = new StringBuffer();
                 while(num-->0)
                     ans.append(sb);
