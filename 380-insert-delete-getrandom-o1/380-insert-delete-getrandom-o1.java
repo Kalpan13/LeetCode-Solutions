@@ -1,46 +1,40 @@
 class RandomizedSet {
-    Map<Integer,Integer> indices;
-    List<Integer> nums;
+    Map<Integer,Integer> hm;
     Random rand;
+    List<Integer> arr;
     public RandomizedSet() {
-        nums = new ArrayList<>();
-        indices = new HashMap<>();
+        hm = new HashMap<>();
         rand = new Random();
+        arr = new ArrayList<>();
     }
     
     public boolean insert(int val) {
-        if(indices.containsKey(val))
-            return false;
         
-        indices.put(val,nums.size());
-        nums.add(val);
+        if(hm.containsKey(val))
+            return false;
+        hm.put(val, arr.size());
+        arr.add(val);
         return true;
     }
     
     public boolean remove(int val) {
-        if(!indices.containsKey(val))
+        if(!hm.containsKey(val))
             return false;
+        int ind = hm.get(val);
+        int lastEle = arr.get(arr.size()-1);
         
-        
-        int ind = indices.get(val);
-        if(ind<nums.size()-1)
-        {
-            indices.remove(val);
-            indices.put(nums.get(nums.size()-1), ind);
-            nums.set(ind, nums.get(nums.size()-1));
-            nums.remove(nums.size()-1);    
-        }
-        else
-        {
-            nums.remove(nums.size()-1);   
-            indices.remove(val);
-        }
-        
+        arr.set(ind, lastEle);
+        arr.remove(arr.size()-1);
+        hm.remove(val);
+        if(val!=lastEle)
+            hm.put(lastEle, ind);
         return true;
     }
     
     public int getRandom() {
-        return nums.get(rand.nextInt(nums.size()));
+        int randInd = rand.nextInt(arr.size());
+        
+        return arr.get(randInd);
     }
 }
 
