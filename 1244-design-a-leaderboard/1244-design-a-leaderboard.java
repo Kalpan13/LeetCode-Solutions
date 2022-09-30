@@ -19,7 +19,6 @@ class Leaderboard {
                 pq.poll();
         }
         int total = 0;
-        Iterator value = pq.iterator();
         for(Integer v : pq)
         {
             total = total + v;
