@@ -27,7 +27,6 @@ class Solution {
         {
             if(face>pendingSum)
                 break;
-            // System.out.println("Tar")
             count = (count + (helper(n-1, k, target, pendingSum-face)% MOD))%MOD;
         }
         return memo[n][pendingSum] = count;
