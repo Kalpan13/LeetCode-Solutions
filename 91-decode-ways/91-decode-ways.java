@@ -1,10 +1,6 @@
 class Solution {
     int memo[];
-    int count = 0;
-    Set<StringBuffer> seen;
     public int numDecodings(String s) {
-        count = 0;
-        seen = new HashSet<>();
         int n = s.length();
         memo = new int[n];
         Arrays.fill(memo, -1);
@@ -16,7 +12,6 @@ class Solution {
     {
         if(ind>=s.length())
         {
-            count++;
             return 1;
         }
         if(memo[ind]!=-1)
