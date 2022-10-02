@@ -23,10 +23,8 @@ class Solution {
             return memo[n][pendingSum];
         
         int count = 0;
-        for(int face=1;face<=k;face++)
+        for(int face=1;face<=Math.min(pendingSum,k);face++)
         {
-            if(face>pendingSum)
-                break;
             count = (count + (helper(n-1, k, target, pendingSum-face)% MOD))%MOD;
         }
         return memo[n][pendingSum] = count;
