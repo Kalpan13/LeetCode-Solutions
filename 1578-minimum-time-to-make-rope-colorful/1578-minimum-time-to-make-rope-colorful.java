@@ -15,7 +15,6 @@ class Solution {
                 {
                     sumCostGroup += neededTime[i];
                     maxCostGroup = Math.max(neededTime[i], maxCostGroup);
-                    // System.out.println("i : "+i+" sum : "+sumCostGroup + " maxCostGroup :"+maxCostGroup);
                     cost += sumCostGroup-maxCostGroup;
                 }
             }
@@ -23,7 +22,6 @@ class Solution {
             {
                 sumCostGroup += neededTime[i-1];
                 maxCostGroup = Math.max(neededTime[i-1], maxCostGroup);
-                // System.out.println("i : "+i+" sum : "+sumCostGroup + " maxCostGroup :"+maxCostGroup);
                 cost += sumCostGroup-maxCostGroup;
                 
                 sumCostGroup = maxCostGroup = 0;
