@@ -1,24 +1,36 @@
 class Solution {
     public int minCost(String colors, int[] neededTime) {
         int cost = 0;
+        int maxCostGroup = 0;
+        int sumCostGroup = 0;
         char colorsChar[] = colors.toCharArray();
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        pq.offer(neededTime[0]);
+        
         for(int i=1;i<colorsChar.length;i++)
         {
             if(colorsChar[i]==colorsChar[i-1]) // Same color as previous
             {
-                pq.offer(neededTime[i]);
-                // System.out.println(pq);
+                sumCostGroup += neededTime[i-1];
+                maxCostGroup = Math.max(neededTime[i-1], maxCostGroup);
+                if(i==colorsChar.length-1)
+                {
+                    sumCostGroup += neededTime[i];
+                    maxCostGroup = Math.max(neededTime[i], maxCostGroup);
+                    // System.out.println("i : "+i+" sum : "+sumCostGroup + " maxCostGroup :"+maxCostGroup);
+                    cost += sumCostGroup-maxCostGroup;
+                }
             }
             else
             {
-                pq.clear();
-                pq.offer(neededTime[i]);
+                sumCostGroup += neededTime[i-1];
+                maxCostGroup = Math.max(neededTime[i-1], maxCostGroup);
+                // System.out.println("i : "+i+" sum : "+sumCostGroup + " maxCostGroup :"+maxCostGroup);
+                cost += sumCostGroup-maxCostGroup;
+                
+                sumCostGroup = maxCostGroup = 0;
+                
             }
-            while(pq.size()>1)
-                    cost+= pq.poll();
         }
+        
         return cost;
     }
     
