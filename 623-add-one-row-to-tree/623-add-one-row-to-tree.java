@@ -32,10 +32,8 @@ class Solution {
         
         if(root==null)
             return;
-        // System.out.println("Depth : "+depth + " curDepth : "+curDepth + " root :"+root.val);
         if(curDepth==depth)
         {
-            // System.out.println("Changing Nodes");
             TreeNode newNodeLeft = new TreeNode(val);
             if(root.left!=null)
                 newNodeLeft.left = root.left;
