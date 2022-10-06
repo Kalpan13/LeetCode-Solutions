@@ -1,8 +1,7 @@
 class TimeMap {
     Map<String,List<Pair<String,Integer>>> hm;
     public TimeMap() {
-        hm = new HashMap<>();
-        
+        hm = new HashMap<>(); 
     }
     
     public void set(String key, String value, int timestamp) {
@@ -17,8 +16,6 @@ class TimeMap {
         if(valTimes.size()==0)
             return "";
         
-        //Collections.sort(valTimes, (a,b)-> (a.getValue()-b.getValue()));
-        //System.out.println(valTimes);
         int low = 0;
         int high = valTimes.size()-1;
         int target = timestamp;
@@ -27,7 +24,6 @@ class TimeMap {
         while(low < high)
         {
             int mid = (low+high)/2;
-            // System.out.println("low : "+low + " high : "+high + " mid : "+ mid);
             if(valTimes.get(mid).getValue()==target)
                 return valTimes.get(mid).getKey();
             if(valTimes.get(mid).getValue()<target)
