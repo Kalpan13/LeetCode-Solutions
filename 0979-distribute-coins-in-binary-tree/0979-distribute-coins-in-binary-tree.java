@@ -25,11 +25,6 @@ class Solution {
         if(root==null)
             return 0;
         
-        // if(root.left==null && root.right==null)
-        // {
-        //     ans+= Math.abs(root.val-1);
-        //     return root.val - 1;
-        // }
         int L = dfs(root.left);
         int R = dfs(root.right);
         
