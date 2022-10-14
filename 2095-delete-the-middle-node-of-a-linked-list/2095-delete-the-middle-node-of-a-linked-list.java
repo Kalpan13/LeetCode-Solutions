@@ -21,7 +21,6 @@ class Solution {
             middle--;
         }
         cur.next = cur.next.next;
-        // System.out.println("Middle : "+cur.val);
         return head;
     }
     public int findLen(ListNode head)
