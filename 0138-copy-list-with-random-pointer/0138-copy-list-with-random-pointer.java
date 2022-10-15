@@ -32,10 +32,9 @@ class Solution {
             cur.next.random = (cur.random!=null)?cur.random.next:null;
             cur = cur.next.next;
         }
-        cur = head; //ptr_old_list
-        Node headCopy = head.next; // head_old
-        Node curCopy = head.next; // ptr_new_list
-        
+        cur = head; 
+        Node headCopy = head.next; 
+        Node curCopy = head.next; 
         while(cur!=null)
         {
             cur.next = cur.next.next;
