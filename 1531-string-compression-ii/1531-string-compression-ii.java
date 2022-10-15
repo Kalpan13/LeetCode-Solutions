@@ -26,6 +26,8 @@ class Solution {
         char c = s.charAt(i);
         int newCInd = (int)(c-'a');
         int len1 = Integer.MAX_VALUE;
+        
+        // Leave it
         int len2 = k>0?solve(i+1, count, cInd, k-1, s):Integer.MAX_VALUE;
         
         if(newCInd==cInd)
