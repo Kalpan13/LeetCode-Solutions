@@ -5,22 +5,29 @@ class Solution {
         backtrack(0, nums, ans, new ArrayList<>());
         return ans;
     }
-    public void backtrack(int ind, int[] nums, List<List<Integer>> ans, List<Integer> curList)
+    public void backtrack(int pos, int[] nums, List<List<Integer>> ans, List<Integer> curList)
     {
-        if(curList.size()==nums.length)
+        
+        if(pos==nums.length)
         {
             ans.add(new ArrayList<>(curList));
             return;
         }
             
         
-        for(int i=0;i<nums.length;i++)
+        for(int i=pos;i<nums.length;i++)
         {
-            if(curList.contains(nums[i]))
-                continue;
             curList.add(nums[i]);
-            backtrack(i+1,nums, ans, curList);
+            swap(pos, i, nums);
+            backtrack(pos+1, nums, ans, curList);
             curList.remove(curList.size()-1);
+            swap(pos, i, nums);
         }
+    }
+    public void swap(int i, int j, int[] nums)
+    {
+        int tp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tp;
     }
 }
