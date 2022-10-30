@@ -24,8 +24,7 @@ class Solution {
         }
         if(lastNum-k>=0)
         {
-            int nextNum = (lastNum-k);
-            backtrack(n, k, cur*10+nextNum, ans);
+            backtrack(n, k, cur*10+(lastNum-k), ans);
         }
     }
 }
