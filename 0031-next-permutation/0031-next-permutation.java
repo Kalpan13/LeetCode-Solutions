@@ -1,7 +1,6 @@
 class Solution {
     public void nextPermutation(int[] nums) {
         int pivotInd = findPivot(nums);
-        // System.out.println("pivotInd :"+pivotInd);
         if(pivotInd == -1)
             reverse(nums, 0, nums.length-1);
         else
@@ -10,9 +9,7 @@ class Solution {
             while(nums[j]<=nums[pivotInd])
             {
                 j--;
-                System.out.println("j :"+j);
             }
-                
             swap(nums, pivotInd, j);
             reverse(nums, pivotInd+1, nums.length-1);
         }
