@@ -15,7 +15,6 @@ class Solution {
                     return false;
             }
             int cur = matrix[i][j];
-            //System.out.println("i :"+i + " j :"+j + " cur : "+cur);
             if(cur==target)
                 return true;
             if(cur<target)
