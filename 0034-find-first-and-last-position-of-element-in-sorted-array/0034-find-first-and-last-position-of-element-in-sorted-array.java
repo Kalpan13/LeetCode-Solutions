@@ -26,10 +26,10 @@ class Solution {
         while(low<high)
         {
             int mid = (low+high)/2;
-            // System.out.println("low :"+low + " mid :"+mid + " high : "+high);
+            
             if(nums[mid]==target)
             {
-                if(mid==0 || nums[mid-1]<nums[mid]) // first occurrence found
+                if(mid==0 || nums[mid-1]<nums[mid]) 
                 {
                     return mid;
                 }
@@ -37,7 +37,6 @@ class Solution {
                 {
                     high = mid;
                     first = mid;
-                    // System.out.println("New High :"+first);
                 }
             }
             else if(nums[mid]>target)
@@ -49,7 +48,6 @@ class Solution {
                 low = mid+1;
             }
         }
-        // System.out.println("lowerBound : "+first);
         if(low<0)
             return first;
         
@@ -63,7 +61,7 @@ class Solution {
         while(low<high)
         {
             int mid = (low+high)/2;
-            // System.out.println("low :"+low + " mid :"+mid + " high : "+high);
+            
             if(nums[mid]==target)
             {
                 if(mid==nums.length-1 || nums[mid]<nums[mid+1])
@@ -87,8 +85,6 @@ class Solution {
         }
         if(high>=nums.length)
             return last;
-        
-        // System.out.println("upperBound : "+last);
         
         return nums[high]==target?high:last;
     }
