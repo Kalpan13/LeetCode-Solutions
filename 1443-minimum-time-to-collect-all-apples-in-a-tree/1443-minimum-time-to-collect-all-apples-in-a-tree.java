@@ -2,7 +2,6 @@ class Solution {
     class Node
     {
         List<Node> neighbors;
-        // int appleCount;
         boolean hasApple;
         int val;
         Node(int val, boolean hasApple)
@@ -10,7 +9,6 @@ class Solution {
             this.val = val;
             this.neighbors = new ArrayList<>();
             this.hasApple = hasApple;
-            // this.appleCount = hasApple?1:0;
         }
     }
     boolean[] visited;
@@ -59,9 +57,5 @@ class Solution {
             return 0;
         else
             return pathLength+2;
-        // if(pathLength>0)
-        //     return pathLength+2;
-        // return 2;
-        
     }
 }
