@@ -21,8 +21,6 @@ class ProductOfNumbers {
     public int getProduct(int k) {
         
         int n = stream.size();
-        // System.out.println("Stream : "+stream);
-        // System.out.println("k : "+k);
         
         if(n-k<=0)
             return 0;
