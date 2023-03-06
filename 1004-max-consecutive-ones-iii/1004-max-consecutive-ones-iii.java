@@ -13,8 +13,7 @@ class Solution {
             {
                 count++;
             }
-            //System.out.println("Reducing the window");
-            while(count>k)
+            while(start<=end && count>k)
             {
                 if(nums[start]==0)
                     count--;
